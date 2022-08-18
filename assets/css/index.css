@@ -1,0 +1,359 @@
+@import './parts/fonts.css';
+@import './parts/basic.css';
+
+/* ------------------------------- */
+/* Nav Section */
+@import './parts/nav.css';
+
+/* ------------------------------- */
+/* Intro Section */
+
+.intro-section {
+  padding: 4.8rem;
+  padding-top: 7.5rem;
+  text-align: center;
+}
+
+.title,
+.subtitle {
+  margin-bottom: 2.4rem;
+}
+
+.avtar {
+  margin: 3.2rem 0;
+  width: 21.2rem;
+}
+
+.hero-devices {
+  width: 80.6rem;
+}
+
+/* ------------------------------- */
+/* Skills section */
+
+.skills-section {
+  margin: 0 auto;
+  margin-top: -25.2rem;
+  background-color: #fff;
+  border: var(--gray-border);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skill-column {
+  padding: 7rem 4.5rem;
+}
+
+.skill-column:not(:last-child) {
+  border-right: var(--gray-border);
+}
+
+.skill-section {
+  margin-bottom: 3.6rem;
+}
+
+.skill-section,
+.list-title,
+.skill-list-item {
+  font-size: 1.8rem;
+}
+
+.skill-icon {
+  background-color: var(--color-seagreen-light);
+  display: inline-block;
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.skill-icon svg {
+  height: 3.6rem;
+  width: 4.5rem;
+}
+
+.skill-title {
+  margin: 2.4rem 0;
+}
+
+.list-title {
+  margin-top: 5rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-purple);
+}
+
+.skill-list {
+  list-style-type: none;
+}
+
+.skill-list-item {
+  margin-top: 5px;
+}
+
+/* ------------------------------- */
+/* Recent Work Section */
+
+.recent-work-section {
+  padding-bottom: 15rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  padding: 6.4rem 0;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-medium);
+}
+
+.project-figure,
+.project-image,
+.project-summary {
+  border-radius: var(--border-radius-medium);
+  width: 100%;
+}
+
+.project-image {
+  vertical-align: middle;
+  transition: all 0.25s ease-in-out;
+}
+
+.project-summary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-blue-dark);
+  opacity: 0;
+  transition: all 0.45s ease-in-out;
+}
+
+.project-summary-heading,
+.project .project-cta-btn {
+  color: #fff;
+}
+
+.project-summary-heading {
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.project-cta-btn {
+  font-size: 1.8rem;
+}
+
+.angle-right-icon {
+  width: 0.8rem;
+  vertical-align: middle;
+  margin-left: 1rem;
+  margin-top: 3px;
+}
+
+/* Project card hover effect */
+.project:hover .project-image {
+  transform: scale(1.2);
+}
+
+.project:hover .project-summary {
+  opacity: 1;
+}
+
+.view-more-btn {
+  margin: 4.4rem auto 0;
+}
+
+/* ------------------------------- */
+/* Footer */
+
+/* CTA Section */
+
+.cta-container {
+  padding: 8rem 2.4rem 3.2rem;
+}
+
+.cta-section {
+  background-color: var(--color-blue-dark);
+  padding: 5.6rem 2rem;
+  margin-top: -14.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.cta-section > * {
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: 3.2rem;
+}
+
+.cta-btn {
+  margin: auto;
+}
+
+/* Socials section */
+
+.socials-section {
+  padding: 6.4rem 2.4rem;
+}
+
+.socials-logo {
+  width: 5.5rem;
+}
+
+.socials-section,
+h2.socials-heading {
+  color: #e2cdfd;
+}
+
+.socials-heading {
+  font-weight: 300;
+  font-size: 2.55rem;
+  margin: 3.5rem auto;
+  max-width: 320px;
+}
+
+.social-icons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  margin-bottom: 3.5rem;
+}
+
+.social-link {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  padding: 1rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icon {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+
+.social-link:hover {
+  background-color: #fff;
+  color: var(--color-purple);
+}
+
+.social-link:hover .social-icon {
+  color: var(--color-purple);
+}
+
+/* ------------------------------- */
+/* Media Queries */
+
+@media only screen and (max-width: 1060px) {
+  /* 
+    This media query is specific to this page
+    therefore gets place in index.css and not basic.css
+  */
+  .section-narrow {
+    width: 100%;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .hero-devices {
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-column:not(:last-child) {
+    border-right: none;
+    border-bottom: var(--gray-border);
+  }
+
+  .project-summary-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-section {
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 5.6rem 3.2rem;
+  }
+
+  .cta-description {
+    padding: 0 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .intro-section,
+  .hero-footer + section,
+  .recent-work-section {
+    padding: var(--default-padding);
+  }
+
+  .intro-section .title {
+    font-size: 4.4rem;
+    line-height: 1.1;
+  }
+
+  .intro-section .subtitle {
+    font-size: 2rem;
+  }
+
+  .hero-footer + section {
+    padding-top: 10rem;
+    padding-bottom: 28.8rem;
+  }
+
+  .short-para {
+    width: 100%;
+  }
+
+  .recent-work-section {
+    padding-bottom: 15rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-summary-heading {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .view-more-btn {
+    margin-top: 0;
+  }
+}

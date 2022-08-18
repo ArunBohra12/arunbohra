@@ -1,0 +1,92 @@
+@import './parts/fonts.css';
+@import './parts/basic.css';
+
+/* ------------------------------- */
+/* Nav Section */
+
+@import './parts/nav.css';
+
+.nav {
+  border-bottom: var(--gray-border);
+  padding: 3.4rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn {
+  margin-right: 1rem;
+}
+
+.nav-menu svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--color-purple);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* ------------------------------- */
+/* Profile Section */
+
+.avtar {
+  width: 9.2rem;
+  margin-top: -5rem;
+  margin-bottom: 4rem;
+}
+
+.contact-heading {
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+/* ------------------------------- */
+/* Contact Form Section */
+
+.contact-form {
+  max-width: 64rem;
+  margin: 6rem auto 8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-input-group {
+  display: flex;
+  gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.two-input-group > .form-group {
+  flex: 1;
+}
+
+.submit-btn {
+  margin: auto;
+  margin-top: 5rem;
+}
+
+/* ------------------------------- */
+/* Media Queries */
+
+@media only screen and (max-width: 880px) {
+  .contact-section .short-para {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .contact-heading {
+    font-size: 3.6rem;
+  }
+
+  .two-input-group {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,36 @@
+.nav {
+  font-size: 1.8rem;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo-img {
+  width: 5rem;
+  vertical-align: middle;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.2rem 0;
+}
+
+.nav-menu-item {
+  padding: 0.8rem 1.2rem;
+}
+
+.nav-menu-link,
+.nav-menu-link:link,
+.nav-menu-link:visited {
+  color: var(--color-gray);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link:active {
+  color: var(--color-purple);
+}
