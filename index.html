@@ -4,56 +4,91 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="shortcut icon" href="./assets/img/icons/favicon.ico" type="image/x-icon" />
     <title>Arun Bohra | Full Stack Web Developer</title>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/slick.min.css" />
+    <script type="text/javascript" src="../assets/js/slick.min.js" defer></script>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+
+    <!-- Script Links -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="../assets/js/main.js" defer></script>
   </head>
   <body>
-    <nav class="nav container">
+    <nav class="nav">
       <a href="/" class="nav-logo">
         <img src="./assets/img/icons/logo-blue.png" alt="Arun Bohra" class="nav-logo-img" />
       </a>
 
+      <label for="toggle-mobile-nav">
+        <svg class="mobile-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+        </svg>
+      </label>
+
+      <input type="checkbox" id="toggle-mobile-nav" title="nav" />
+
       <ul class="nav-menu">
-        <!-- <li class="nav-menu-item">
-          <a href="./about.html" class="nav-menu-link">About</a>
-        </li> -->
         <li class="nav-menu-item">
-          <a href="./contact.html" class="btn btn-purple">Say Hello</a>
+          <a class="nav-menu-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link" href="#work-experience">Experience</a>
+        </li>
+        <li class="nav-menu-item">
+          <a class="nav-menu-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-menu-item">
+          <a href="/contact.html" class="nav-menu-link contact-link-mobile">Contact</a>
+          <a href="/contact.html" class="btn btn-purple">Contact</a>
         </li>
       </ul>
     </nav>
 
     <main class="main">
       <section class="intro-section">
-        <h1 class="heading-primary title">Full Stack Web Development</h1>
-        <p class="intro-subtitle subtitle">I beautifully simple things and complex backends, and I love what I do.</p>
+        <h1 class="heading-primary title wow animate-fade-in-up">Hi, I'm Arun</h1>
+        <p class="intro-subtitle subtitle wow animate-fade-in-up">
+          A passionate Full Stack Software Developer having a special interest in Frontend technologies and experience
+          of building Web applications with JavaScript / Reactjs / Nodejs and some other technologies, libraries and
+          frameworks.
+        </p>
 
         <div class="avtar-container">
-          <img src="./assets/img/avatar.svg" alt="Arun Bohra" class="avtar" />
+          <img src="./assets/img/avatar.svg" alt="Arun Bohra" class="avtar wow animate-fade-in-up" />
         </div>
       </section>
       <section class="hero-footer text-center">
-        <img src="./assets/img/hero-devices.svg" alt="Devices" class="hero-devices" />
+        <img
+          src="./assets/img/hero-devices.svg"
+          alt="Devices"
+          class="hero-devices wow animate-fade-in"
+          data-wow-duration="2.5s" />
       </section>
 
-      <section class="section-padding section-long section-purple text-center">
-        <div class="short-para">
-          <h2 class="section-title">Hi, I'm Arun. Nice to meet you.</h2>
+      <section id="skills" class="section-padding section-long section-purple text-center">
+        <div class="short-para wow animate-fade-in-up">
+          <h2 class="section-title">Nice to meet you.</h2>
           <p class="section-subtitle">
-            Since beginning my journey as a freelance designer over 11 years, I've done remote work for agencies,
-            consulted for startups, and collaborated with talented people to create digital products for both business
-            and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops
-            one design problem at a time.
+            Since the beginning of my journey as a web developer, I have done freelance work for clients accross the
+            world, collaborated with a lot of talented people to create digital products for business uses. I'm quietly
+            confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
           </p>
         </div>
       </section>
 
       <section>
-        <div class="skills-section section-narrow">
+        <div class="skills-section section-narrow wow animate-fade-in-up">
           <div class="skills-grid">
             <div class="skill-column text-center">
-              <div class="skill-section">
+              <div class="">
                 <div class="skill-icon">
                   <svg
                     aria-hidden="true"
@@ -76,19 +111,16 @@
               </div>
 
               <div class="skill-section">
-                <p class="list-title">Things I enjoy designing</p>
-                <p>UI, UX, Web Apps, Logos</p>
+                <p class="list-title">Things I enjoy designing:</p>
+                <p>UI, UX, Web Apps</p>
               </div>
 
               <div>
                 <p class="list-title">Design Tools</p>
                 <ul class="skill-list">
-                  <li class="skill-list-item">Affinity Designer</li>
                   <li class="skill-list-item">Figma</li>
                   <li class="skill-list-item">Font Awesome</li>
                   <li class="skill-list-item">Pen & paper</li>
-                  <li class="skill-list-item">Sketch</li>
-                  <li class="skill-list-item">Webflow</li>
                 </ul>
               </div>
             </div>
@@ -117,19 +149,17 @@
               </div>
 
               <div class="skill-section">
-                <p class="list-title">Things I enjoy designing</p>
-                <p>UI, UX, Web Apps, Logos</p>
+                <p class="list-title">Languages I speak:</p>
+                <p>HTML, CSS, JavaScript, React</p>
               </div>
 
               <div>
-                <p class="list-title">Design Tools</p>
+                <p class="list-title">Dev Tools</p>
                 <ul class="skill-list">
-                  <li class="skill-list-item">Affinity Designer</li>
-                  <li class="skill-list-item">Figma</li>
-                  <li class="skill-list-item">Font Awesome</li>
-                  <li class="skill-list-item">Pen & paper</li>
-                  <li class="skill-list-item">Sketch</li>
-                  <li class="skill-list-item">Webflow</li>
+                  <li class="skill-list-item">VS Code</li>
+                  <li class="skill-list-item">Chrome Dev Tools</li>
+                  <li class="skill-list-item">Bootstrap</li>
+                  <li class="skill-list-item">Netlify</li>
                 </ul>
               </div>
             </div>
@@ -141,36 +171,35 @@
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fal"
-                    data-icon="layer-plus"
+                    data-icon="square-terminal"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
+                    viewBox="0 0 448 512"
                     data-fa-i2svg="">
                     <path
                       fill="currentColor"
-                      d="M448 64H488C496.8 64 504 71.16 504 80C504 88.84 496.8 96 488 96H448V136C448 144.8 440.8 152 432 152C423.2 152 416 144.8 416 136V96H376C367.2 96 360 88.84 360 80C360 71.16 367.2 64 376 64H416V24C416 15.16 423.2 8 432 8C440.8 8 448 15.16 448 24V64zM277.8 132.7L495.2 230.1C505.4 234.7 512 244.8 512 256C512 267.2 505.4 277.3 495.2 281.9L277.8 379.3C270.1 382.4 263.5 384 256 384C248.5 384 241 382.4 234.2 379.3L16.76 281.9C6.561 277.3 .0003 267.2 .0003 256C.0003 244.8 6.561 234.7 16.76 230.1L234.2 132.7C241 129.6 248.5 128 256 128C263.5 128 270.1 129.6 277.8 132.7V132.7zM37.27 256L247.2 350.1C249.1 351.4 252.1 352 256 352C259 352 262 351.4 264.8 350.1L474.7 256L264.8 161.9C262 160.6 259 160 256 160C252.1 160 249.1 160.6 247.2 161.9L37.27 256zM37.27 384L247.2 478.1C249.1 479.4 252.1 480 256 480C259 480 262 479.4 264.8 478.1L474.7 384L441.5 369.1C433.4 365.5 429.8 356 433.4 347.9C437 339.9 446.5 336.3 454.5 339.9L495.2 358.1C505.4 362.7 512 372.8 512 384C512 395.2 505.4 405.3 495.2 409.9L277.8 507.3C270.1 510.4 263.5 512 256 512C248.5 512 241 510.4 234.2 507.3L16.76 409.9C6.561 405.3 0 395.2 0 384C0 372.8 6.561 362.7 16.76 358.1L57.46 339.9C65.52 336.3 74.99 339.9 78.6 347.9C82.21 356 78.61 365.5 70.54 369.1L37.27 384z"></path>
+                      d="M106.4 147.9L218.4 243.9C221.1 246.9 224 251.3 224 256C224 260.7 221.1 265.1 218.4 268.1L106.4 364.1C99.7 369.9 89.6 369.1 83.85 362.4C78.1 355.7 78.88 345.6 85.59 339.9L183.4 256L85.59 172.1C78.88 166.4 78.1 156.3 83.85 149.6C89.6 142.9 99.7 142.1 106.4 147.9V147.9zM368 352C376.8 352 384 359.2 384 368C384 376.8 376.8 384 368 384H208C199.2 384 192 376.8 192 368C192 359.2 199.2 352 208 352H368zM384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM384 64H64C46.33 64 32 78.33 32 96V416C32 433.7 46.33 448 64 448H384C401.7 448 416 433.7 416 416V96C416 78.33 401.7 64 384 64z"></path>
                   </svg>
                 </div>
-                <h3 class="skill-title subtitle">Designer</h3>
+                <h3 class="skill-title subtitle">Backend Developer</h3>
                 <p class="skill-summary">
-                  I value simple content structure, clean design patterns, and thoughtful interactions.
+                  I love to structure the whole applications and add interactivity to any application.
                 </p>
               </div>
 
               <div class="skill-section">
-                <p class="list-title">Things I enjoy designing</p>
-                <p>UI, UX, Web Apps, Logos</p>
+                <p class="list-title">Languages I speak:</p>
+                <p>NodeJS, PHP</p>
               </div>
 
               <div>
-                <p class="list-title">Design Tools</p>
+                <p class="list-title">Dev Tools</p>
                 <ul class="skill-list">
-                  <li class="skill-list-item">Affinity Designer</li>
-                  <li class="skill-list-item">Figma</li>
-                  <li class="skill-list-item">Font Awesome</li>
-                  <li class="skill-list-item">Pen & paper</li>
-                  <li class="skill-list-item">Sketch</li>
-                  <li class="skill-list-item">Webflow</li>
+                  <li class="skill-list-item">Terminal</li>
+                  <li class="skill-list-item">Linux Servers</li>
+                  <li class="skill-list-item">Postman</li>
+                  <li class="skill-list-item">SSH</li>
+                  <li class="skill-list-item">Git</li>
                 </ul>
               </div>
             </div>
@@ -178,24 +207,141 @@
         </div>
       </section>
 
-      <section class="recent-work-section section-padding-medium text-center">
-        <h2 class="section-title">My Recent Work</h2>
-        <p class="section-subtitle">
+      <section id="technologies" class="technologies-section text-center section-padding-medium">
+        <h2 class="section-title">Technologies I have worked with</h2>
+
+        <div class="technologies wow animate-fade-in" data-wow-duration="5s">
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/html-5.svg" alt="HTML5" />
+            <div class="technology-name">HTML</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/css3.svg" alt="CSS3" />
+            <div class="technology-name">CSS</div>
+          </div>
+
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/bootstrap.svg" alt="Bootstrap" />
+            <div class="technology-name">Bootstrap</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/sass.svg" alt="SCSS" />
+            <div class="technology-name">SCSS</div>
+          </div>
+
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/javascript.svg" alt="Javascript" />
+            <div class="technology-name">JavaScript</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/react.svg" alt="React JS" />
+            <div class="technology-name">ReactJS</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/nodejs.svg" alt="Node JS" />
+            <div class="technology-name">NodeJS</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/express-js.svg" alt="Express" />
+            <div class="technology-name">Express</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/php.svg" alt="PHP" />
+            <div class="technology-name">PHP</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/mongodb.svg" alt="Mongo DB" />
+            <div class="technology-name">Mongo DB</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/figma.svg" alt="Figma" />
+            <div class="technology-name">Figma</div>
+          </div>
+          <div class="technology">
+            <img class="technology-image" src="../assets/img/technologies/git.svg" alt="Git" />
+            <div class="technology-name">Git</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work-experience" class="section-padding section-long section-purple text-center">
+        <h2 class="section-title wow animate-fade-in-up">My Work Experience</h2>
+        <p class="section-subtitle wow animate-fade-in-up">
+          I have worked with a lots of people and teams over the past couple of years. Here is the list of places I have
+          worked at.
+        </p>
+      </section>
+
+      <section>
+        <div class="work-experience-section section-narrow">
+          <div class="workplaces">
+            <div class="company wow animate-fade-in-left">
+              <div class="company-logo">
+                <img src="../assets/img/workplaces/nv.png" alt="NotifyVisitors" />
+                <h3 class="company-name">Tagnpin Web Solutions</h3>
+              </div>
+              <div class="company-details">
+                <h2 class="job-title">Full Stack Developer</h2>
+                <p class="work-description">
+                  I worked at Tagnpin Web Solutions with two of their amazing products -
+                  <a href="https://www.notifyvisitors.com/" target="_blank">NotifyVisitors</a> and
+                  <a href="https://invitereferrals.com/" target="_blank">InviteReferrals</a>. I worked on both of their
+                  front end applications as well as building the backend. I was mainly tasked with handling the clients,
+                  creating their UIs and implementing APIs for them.
+                </p>
+
+                <h3 class="responsibilities-heading">Responsibilities</h3>
+                <ul class="responsibilities">
+                  <li>Writing clean and standard code</li>
+                  <li>Helping fellow colleagues with their problems</li>
+                  <li>Fixing any problems in previously written code</li>
+                  <li>Handling big clients across the country</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="company wow animate-fade-in-right">
+              <div class="company-logo">
+                <img src="../assets/img/workplaces/heiphen.png" alt="Heiphen" />
+                <h3 class="company-name">Heiphen</h3>
+              </div>
+              <div class="company-details">
+                <h2 class="job-title">React Developer</h2>
+                <p class="work-description">
+                  I worked at Heiphen as their front end developer. Developing designs for the official website included
+                  my main tasks. Keeping the code clean and maintianable was another part of the job that I had to
+                  highly focus upon.
+                </p>
+
+                <h3 class="responsibilities-heading">Responsibilities</h3>
+                <ul class="responsibilities">
+                  <li>Designing the structure and UI of the pages</li>
+                  <li>Discussing with the team members to create solutions</li>
+                  <li>Writing clean and standard code</li>
+                  <li>Using modern tools for development</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="recent-work-section section-padding-medium text-center">
+        <h2 class="section-title wow animate-fade-in-up">My Recent Work</h2>
+        <p class="section-subtitle wow animate-fade-in-up">
           Here are a few past design projects I've worked on. Want to see more?
           <a href="mailto:arunbohra12@gmail.com">Email me.</a>
         </p>
 
-        <div class="project-grid">
+        <div class="project-grid wow animate-fade-in" data-wow-duration="3s">
           <div class="project">
             <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
+              <img src="../assets/img/projects/talk-a-tive.png" alt="project" class="project-image" />
 
               <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
+                <h3 class="project-summary-heading subtitle">Chat application built with MERN stack.</h3>
 
-                <a href="#" class="btn btn-purple project-cta-btn">
+                <a href="https://talk-a-tive-arun.herokuapp.com" target="_blank" class="btn btn-purple project-cta-btn">
                   <span>Visit Website</span>
                   <svg
                     class="angle-right-icon"
@@ -218,194 +364,12 @@
 
           <div class="project">
             <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
+              <img src="../assets/img/projects/we-transfer.png" alt="project" class="project-image" />
 
               <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
+                <h3 class="project-summary-heading subtitle">A file sharing system built with MERN stack.</h3>
 
-                <a href="#" class="btn btn-purple project-cta-btn">
-                  <span>Visit Website</span>
-                  <svg
-                    class="angle-right-icon"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="angle-right"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 512"
-                    data-fa-i2svg="">
-                    <path
-                      fill="currentColor"
-                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"></path>
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="project">
-            <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
-
-              <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
-
-                <a href="#" class="btn btn-purple project-cta-btn">
-                  <span>Visit Website</span>
-                  <svg
-                    class="angle-right-icon"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="angle-right"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 512"
-                    data-fa-i2svg="">
-                    <path
-                      fill="currentColor"
-                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"></path>
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="project">
-            <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
-
-              <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
-
-                <a href="#" class="btn btn-purple project-cta-btn">
-                  <span>Visit Website</span>
-                  <svg
-                    class="angle-right-icon"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="angle-right"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 512"
-                    data-fa-i2svg="">
-                    <path
-                      fill="currentColor"
-                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"></path>
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="project">
-            <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
-
-              <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
-
-                <a href="#" class="btn btn-purple project-cta-btn">
-                  <span>Visit Website</span>
-                  <svg
-                    class="angle-right-icon"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="angle-right"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 512"
-                    data-fa-i2svg="">
-                    <path
-                      fill="currentColor"
-                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"></path>
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="project">
-            <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
-
-              <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
-
-                <a href="#" class="btn btn-purple project-cta-btn">
-                  <span>Visit Website</span>
-                  <svg
-                    class="angle-right-icon"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="angle-right"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 512"
-                    data-fa-i2svg="">
-                    <path
-                      fill="currentColor"
-                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"></path>
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="project">
-            <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
-
-              <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
-
-                <a href="#" class="btn btn-purple project-cta-btn">
-                  <span>Visit Website</span>
-                  <svg
-                    class="angle-right-icon"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="angle-right"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 512"
-                    data-fa-i2svg="">
-                    <path
-                      fill="currentColor"
-                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"></path>
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="project">
-            <figure class="project-figure">
-              <img src="https://mattfarley.ca/img/projects/wfdesignbuild.png" alt="project" class="project-image" />
-
-              <figcaption class="project-summary">
-                <h3 class="project-summary-heading subtitle">
-                  High-end, custom residential renovaters serving Fraser Valley homeowners.
-                </h3>
-
-                <a href="#" class="btn btn-purple project-cta-btn">
+                <a href="https://we-transfer-arun.herokuapp.com" target="_blank" class="btn btn-purple project-cta-btn">
                   <span>Visit Website</span>
                   <svg
                     class="angle-right-icon"
@@ -457,7 +421,9 @@
           </div>
         </div>
 
-        <a href="https://github.com/ArunBohra12" class="btn btn-purple btn-big view-more-btn">
+        <a
+          href="https://github.com/ArunBohra12"
+          class="btn btn-purple btn-big view-more-btn wow animate-fade-in animate-pulse">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -474,7 +440,7 @@
 
       <footer class="section section-purple">
         <div class="cta-container">
-          <section class="cta-section section-narrow">
+          <section class="cta-section section-narrow wow animate-fade-in-up">
             <div>
               <h2 class="cta-heading">Start a project</h2>
             </div>
@@ -484,7 +450,7 @@
             </p>
 
             <div>
-              <a href="./contact.html" class="cta-btn btn btn-big btn-seagreen">
+              <a href="/contact.html" class="cta-btn btn btn-big btn-seagreen">
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -515,14 +481,14 @@
             </div>
 
             <div class="social-icons-list">
-              <a href="#" class="social-link">
+              <a href="https://github.com/ArunBohra12" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                   <path
                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                 </svg>
               </a>
 
-              <a href="#" class="social-link">
+              <a href="https://twitter.com/ArunBohra122" target="_blank" class="social-link">
                 <svg
                   class="svg-inline--fa fa-twitter fa-fw"
                   aria-hidden="true"
@@ -539,7 +505,7 @@
                 </svg>
               </a>
 
-              <a href="#" class="social-link">
+              <a href="https://www.linkedin.com/in/arunbohra12" target="_blank" class="social-link">
                 <svg
                   class="social-icon"
                   aria-hidden="true"
@@ -555,7 +521,7 @@
                     d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
                 </svg>
               </a>
-              <a href="#" class="social-link">
+              <a href="mailto:arunbohra12@gmail.com" target="_blank" class="social-link">
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -577,5 +543,12 @@
         </section>
       </footer>
     </main>
+
+    <a href="#" id="back-to-top" title="Back To Top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path
+          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+      </svg>
+    </a>
   </body>
 </html>

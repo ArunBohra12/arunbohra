@@ -34,3 +34,19 @@
 .nav-menu-link:active {
   color: var(--color-purple);
 }
+
+.contact-link-mobile {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  height: 2rem;
+  width: 2rem;
+  fill: var(--color-purple);
+  cursor: pointer;
+}
+
+#toggle-mobile-nav {
+  display: none;
+}

@@ -5,6 +5,17 @@
 /* Nav Section */
 @import './parts/nav.css';
 
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 0 6%;
+  z-index: 99;
+}
+
 /* ------------------------------- */
 /* Intro Section */
 
@@ -12,11 +23,17 @@
   padding: 4.8rem;
   padding-top: 7.5rem;
   text-align: center;
+  margin-top: 10rem;
 }
 
 .title,
 .subtitle {
   margin-bottom: 2.4rem;
+}
+
+.intro-subtitle {
+  width: 70%;
+  margin-left: 15%;
 }
 
 .avtar {
@@ -63,7 +80,6 @@
 
 .skill-icon {
   background-color: var(--color-seagreen-light);
-  display: inline-block;
   width: 7.2rem;
   height: 7.2rem;
   border-radius: 50%;
@@ -97,6 +113,120 @@
 }
 
 /* ------------------------------- */
+/* Technologies Section */
+
+#technologies .slick-track {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.technologies {
+  display: grid;
+  grid-row-gap: 2.5rem;
+  grid-column-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.technologies .slick-list {
+  grid-column: 1 / -1;
+}
+
+#technologies .technology {
+  padding: 2rem 1rem;
+  border: var(--gray-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.technologies .slick-arrow:not(.slick-prev, .slick-next) {
+  /* Weird stuff causes to add one more button on technologies slick carousel */
+  display: none !important;
+}
+
+#technologies button {
+  background: var(--color-blue-dark);
+  color: transparent;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  grid-row: 2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#technologies button svg {
+  height: 2rem;
+  width: 2rem;
+  fill: #fff;
+}
+
+#technologies button:first-of-type {
+  margin-left: auto;
+}
+
+.technology-image {
+  cursor: pointer;
+  width: 16rem;
+}
+
+.technology-name {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-family: var(--font-family-secondary);
+}
+
+/* ------------------------------- */
+/* Work Experience Section */
+
+.work-experience-section {
+  margin-top: -25.2rem;
+}
+
+.workplaces {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+}
+
+.company {
+  background-color: #fff;
+  border: var(--gray-border);
+  border-radius: var(--border-radius-medium);
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.company-logo img {
+  width: 12rem;
+}
+
+.company-name {
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.job-title {
+  margin-bottom: 1rem;
+}
+
+.responsibilities-heading {
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.responsibilities {
+  padding-left: 2rem;
+}
+
+/* ------------------------------- */
 /* Recent Work Section */
 
 .recent-work-section {
@@ -113,6 +243,7 @@
 .project {
   position: relative;
   overflow: hidden;
+  border: var(--gray-border);
   border-radius: var(--border-radius-medium);
 }
 
@@ -121,9 +252,11 @@
 .project-summary {
   border-radius: var(--border-radius-medium);
   width: 100%;
+  height: 100%;
 }
 
 .project-image {
+  object-fit: cover;
   vertical-align: middle;
   transition: all 0.25s ease-in-out;
 }
@@ -271,9 +404,15 @@ h2.socials-heading {
 /* ------------------------------- */
 /* Media Queries */
 
+@media only screen and (max-width: 1200px) {
+  .workplaces {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media only screen and (max-width: 1060px) {
   /* 
-    This media query is specific to this page
+    This media query for .section-narrow is specific to this page
     therefore gets place in index.css and not basic.css
   */
   .section-narrow {
@@ -315,6 +454,43 @@ h2.socials-heading {
 }
 
 @media only screen and (max-width: 768px) {
+  /* This CSS for nav is here as we want this to apply only for the index page */
+  nav.nav {
+    padding: 1.5rem;
+  }
+
+  .nav-logo-img {
+    width: 3.5rem;
+  }
+
+  .nav-menu {
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    position: absolute;
+    top: 4.5rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem rgb(0 0 0 / 20%);
+    right: 1.5rem;
+    width: 18rem;
+    transition: all 0.3s;
+  }
+
+  .contact-link-mobile,
+  .mobile-menu {
+    display: block;
+  }
+
+  .contact-link-mobile + .btn {
+    display: none;
+  }
+
+  #toggle-mobile-nav:checked + .nav-menu {
+    visibility: visible;
+    opacity: 1;
+  }
+
   .intro-section,
   .hero-footer + section,
   .recent-work-section {
@@ -339,6 +515,19 @@ h2.socials-heading {
     width: 100%;
   }
 
+  .technologies-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .technology-name {
+    font-size: 1.6rem;
+  }
+
+  .technology-image {
+    width: 8rem;
+  }
+
   .recent-work-section {
     padding-bottom: 15rem;
   }
@@ -353,7 +542,30 @@ h2.socials-heading {
 }
 
 @media only screen and (max-width: 520px) {
+  .intro-subtitle {
+    width: 100%;
+    margin-left: unset;
+  }
+
+  .company {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .company-logo img {
+    width: 8rem;
+  }
+
+  .company-name {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+
   .view-more-btn {
     margin-top: 0;
+  }
+
+  .technology {
+    border: none;
   }
 }

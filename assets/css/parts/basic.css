@@ -11,6 +11,7 @@ html {
   /* Makes 1rem = 10px -> Easier to calculate in rem */
   font-size: 62.5%;
   scrollbar-color: #0064a7 #8ea5b5;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -220,6 +221,35 @@ a {
 .btn-seagreen:active {
   color: var(--color-gray);
   background-color: var(--color-seagreen-light);
+}
+
+/* ------------------------ */
+/* Back To Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--color-blue-dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+#back-to-top.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+#back-to-top svg {
+  height: 2rem;
+  width: 2rem;
+  fill: #fff;
 }
 
 /* ------------------------ */

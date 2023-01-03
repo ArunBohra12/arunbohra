@@ -1,0 +1,57 @@
+@keyframes fadeIn {
+  0% { opacity:0; }
+
+  to{ opacity:1; }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity:0;
+    transform:translate3d(-10%, 0, 0);
+  }
+
+  to{
+    opacity:1;
+    transform:translateZ(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity:0;
+    transform:translate3d(10%, 0, 0);
+  }
+
+  to{
+    opacity:1;
+    transform:translateZ(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity:0;
+    transform:translate3d(0, 30%, 0);
+  }
+
+  to{
+    opacity:1;
+    transform:translateZ(0);
+  }
+}
+
+@keyframes pulse{
+  0% { transform:scaleX(1); }
+
+  50% { transform:scale3d(1.05,1.05,1.05); }
+
+  to{ transform:scaleX(1); }
+}
+
+/* Animation Classes */
+
+.animate-fade-in { animation-name: fadeIn; }
+.animate-fade-in-left { animation-name: fadeInLeft; }
+.animate-fade-in-right { animation-name: fadeInRight; }
+.animate-fade-in-up { animation-name: fadeInUp; }
+.animate-pulse { animation-name: pulse; }
