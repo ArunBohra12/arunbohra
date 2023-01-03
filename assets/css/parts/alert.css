@@ -1,0 +1,38 @@
+.msg {
+  position: fixed;
+  top: 4rem;
+  left: 50%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.05);
+}
+
+.msg-success {
+  background-color: #28a745;
+}
+
+.msg-danger {
+  background-color: #dc3545;
+}
+
+/* Fade Animation */
+.animate {
+  opacity: 0;
+  transition: all 0.6s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.slide-in-down {
+  transform: translateY(-100%) translateX(-50%);
+}
