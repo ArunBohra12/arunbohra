@@ -1,7 +1,7 @@
 {
   "name": "arun-bohra-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.3",
+    "slick-carousel": "^1.8.1"
   }
 }

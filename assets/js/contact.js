@@ -1,24 +1,26 @@
-const resetFormBtn = document.querySelector('.reset-form');
-const contactForm = document.getElementById('contact-form');
+import $ from 'jquery';
+
+const resetFormBtn = $('.reset-form');
+const contactForm = $('#contact-form');
 const emailRegex =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const showAlert = function (type, message) {
-  const alertMessageContainer = document.getElementById('alert-message');
+  const alertMessageContainer = $('#alert-message');
 
-  if (alertMessageContainer.classList.contains('active')) return;
+  if ($(alertMessageContainer).hasClass('active')) return;
 
   const alertType = type === 'success' ? 'msg-success' : 'msg-danger';
 
-  alertMessageContainer.textContent = message;
-  alertMessageContainer.classList.add(alertType);
-  alertMessageContainer.classList.add('active');
+  $(alertMessageContainer).text(message);
+  $(alertMessageContainer).addClass(alertType);
+  $(alertMessageContainer).addClass('active');
 
-  alertMessageContainer.addEventListener('transitionend', function () {
+  $(alertMessageContainer).on('transitionend', function () {
     setTimeout(function () {
-      alertMessageContainer.classList.remove('active');
-      alertMessageContainer.classList.remove('msg-danger');
-      alertMessageContainer.classList.remove('msg-success');
+      $(alertMessageContainer).removeClass('active');
+      $(alertMessageContainer).removeClass('msg-danger');
+      $(alertMessageContainer).removeClass('msg-success');
     }, 3000);
   });
 };
@@ -26,9 +28,9 @@ const showAlert = function (type, message) {
 const sendMessage = async function (e) {
   e.preventDefault();
 
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
+  const name = $('#name').val();
+  const email = $('#email').val();
+  const message = $('#message').val();
 
   if (!name || !email || !message) {
     showAlert('danger', 'Please fill all of the details!');
@@ -54,18 +56,23 @@ const sendMessage = async function (e) {
     },
   };
 
-  const response = await fetch('https://formsubmit.co/ajax/e52b7649f41cbfbc1d20f15e59325b39', requestOptions);
-
-  const data = await response.json();
-
-  if (data.success === 'true') {
-    showAlert('success', 'Message sent successfully!');
-    contactForm.reset();
-  } else {
-    showAlert('danger', 'Sorry, something went wrong. Please try again!');
-  }
+  $.ajax({
+    ...requestOptions,
+    url: 'https://formsubmit.co/ajax/e52b7649f41cbfbc1d20f15e59325b39',
+    success(res) {
+      const data = JSON.parse(res);
+      if (data.success === 'true') {
+        showAlert('success', 'Message sent successfully!');
+        $(contactForm).trigger('reset');
+      } else {
+        showAlert('danger', 'Sorry, something went wrong. Please try again!');
+      }
+    },
+  });
 };
 
-resetFormBtn.addEventListener('click', () => contactForm.reset());
+$(function () {
+  $(resetFormBtn).on('click', () => $(contactForm).trigger('reset'));
 
-contactForm.addEventListener('submit', sendMessage);
+  $(contactForm).on('submit', sendMessage);
+});

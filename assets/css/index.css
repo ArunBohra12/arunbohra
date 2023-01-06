@@ -173,6 +173,7 @@
 .technology-image {
   cursor: pointer;
   width: 16rem;
+  margin: auto;
 }
 
 .technology-name {
