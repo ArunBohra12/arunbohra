@@ -65,8 +65,10 @@
         </h1>
       </div>
 
-      <form method="post" id="contact-form" class="contact-form" netlify>
+      <form method="post" id="contact-form" class="contact-form" netlify data-netlify="true">
         <div class="two-input-group">
+          <input type="hidden" id="bot-field" />
+
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" />

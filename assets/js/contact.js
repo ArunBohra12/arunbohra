@@ -31,6 +31,16 @@ const sendMessage = async function (e) {
   const name = $('#name').val();
   const email = $('#email').val();
   const message = $('#message').val();
+  const botInput = $('#bot-field').val();
+
+  // This is to prevent bots from filling the contact form
+  // They fill all of the inputs inside a form and if the hidden field (not meant for humans)
+  // is also filled that means it's a bot and reject form submission
+  if (botInput) {
+    showAlert('danger', 'Sorry, something went wrong. Please try again!');
+    $(contactForm).trigger('reset');
+    return;
+  }
 
   if (!name || !email || !message) {
     showAlert('danger', 'Please fill all of the details!');
@@ -43,22 +53,20 @@ const sendMessage = async function (e) {
   }
 
   const requestOptions = {
+    url: `https://formsubmit.co/ajax/${import.meta.env.VITE_CONTACT_EMAIL}`,
     method: 'POST',
-    body: JSON.stringify({
+    body: {
       name,
       email,
       message,
-      _subject: 'Message from portfolio site',
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      subject: 'Message from portfolio site',
     },
+    dataType: 'json',
+    accepts: 'application/json',
   };
 
   $.ajax({
     ...requestOptions,
-    url: 'https://formsubmit.co/ajax/e52b7649f41cbfbc1d20f15e59325b39',
     success(res) {
       const data = JSON.parse(res);
       if (data.success === 'true') {
@@ -67,6 +75,9 @@ const sendMessage = async function (e) {
       } else {
         showAlert('danger', 'Sorry, something went wrong. Please try again!');
       }
+    },
+    error() {
+      showAlert('danger', 'Sorry, something went wrong. Please try again!');
     },
   });
 };
