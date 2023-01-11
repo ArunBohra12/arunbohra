@@ -63,7 +63,7 @@ export const handler = async function(event, context) {
     console.log(mailInfo);
 
     // If mail was successfully selt
-    if(mailInfo?.response.includes('OK')) {
+    if(!mailInfo?.response.includes('OK')) {
    	  statusCode = 400;
       response = {
   	  	message: 'Sorry, something went wrong! Please try again.',
