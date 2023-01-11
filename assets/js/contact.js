@@ -52,8 +52,8 @@ const sendMessage = async function (e) {
     return;
   }
 
-  const requestOptions = {
-    url: `https://formsubmit.co/ajax/${import.meta.env.VITE_CONTACT_EMAIL}`,
+  $.ajax({
+    url: '/.netlify/functions/message-me',
     method: 'POST',
     body: {
       name,
@@ -61,24 +61,13 @@ const sendMessage = async function (e) {
       message,
       subject: 'Message from portfolio site',
     },
-    dataType: 'json',
-    accepts: 'application/json',
-  };
-
-  $.ajax({
-    ...requestOptions,
-    success(res) {
-      const data = JSON.parse(res);
-      if (data.success === 'true') {
-        showAlert('success', 'Message sent successfully!');
-        $(contactForm).trigger('reset');
-      } else {
-        showAlert('danger', 'Sorry, something went wrong. Please try again!');
-      }
+    success(data) {
+      showAlert('success', 'Message sent successfully');
+      $(contactForm).trigger('reset');
     },
     error() {
       showAlert('danger', 'Sorry, something went wrong. Please try again!');
-    },
+    }
   });
 };
 
