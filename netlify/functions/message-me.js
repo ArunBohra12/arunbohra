@@ -66,7 +66,6 @@ export const handler = async function(event, context) {
     if(mailInfo?.response.includes('OK')) {
    	  statusCode = 400;
       response = {
-  	  	error: err.message,
   	  	message: 'Sorry, something went wrong! Please try again.',
   	  };
     } else {
