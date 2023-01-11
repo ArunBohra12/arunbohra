@@ -52,10 +52,8 @@ const technologiesCarousel = () => {
 
 const fadeInAnimate = () => {
   const hiddenElements = document.querySelectorAll('.fade-in-animation');
-  console.log(hiddenElements);
 
   const observeHiddenElements = entries => {
-    console.log(entries);
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('fade-in-visible');
