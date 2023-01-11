@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 export const handler = async function(event, context) {
   try {
-    const { name, email, message } = event.body;
+    const { name, email, message } = JSON.parse(event.body);
 
     if (!name || !email || !message) {
       return {
@@ -21,6 +21,9 @@ export const handler = async function(event, context) {
         body: JSON.stringify({
           message: 'Please provide all the details'
         }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       }
     }
 
@@ -55,6 +58,7 @@ export const handler = async function(event, context) {
     let response = { message: 'success', };
     let statusCode = 200;
 
+    // The following transporter sends the mail
     transporter.sendMail(mailOptions, function (err, info) {
       if(err) {
      	  statusCode = 400;

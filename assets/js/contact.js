@@ -55,12 +55,14 @@ const sendMessage = async function (e) {
   $.ajax({
     url: '/.netlify/functions/message-me',
     method: 'POST',
-    body: {
+    data: JSON.stringify({
       name,
       email,
       message,
       subject: 'Message from portfolio site',
-    },
+    }),
+    dataType: 'json',
+    accepts: 'application/json',
     success(data) {
       showAlert('success', 'Message sent successfully');
       $(contactForm).trigger('reset');
