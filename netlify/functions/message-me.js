@@ -12,6 +12,8 @@ const transporter = nodemailer.createTransport({
 });
 
 export const handler = async function(event, context) {
+  console.log(process.env.MAIL_ADDRESS, import.meta.env.MAIL_ADDRESS);
+
   try {
     const { name, email, message } = JSON.parse(event.body);
 
