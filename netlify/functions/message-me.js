@@ -12,8 +12,6 @@ const transporter = nodemailer.createTransport({
 });
 
 export const handler = async function(event, context) {
-  console.log(process.env.MAIL_ADDRESS);
-
   try {
     const { name, email, message } = JSON.parse(event.body);
 
@@ -61,20 +59,22 @@ export const handler = async function(event, context) {
     let statusCode = 200;
 
     // The following transporter sends the mail
-    transporter.sendMail(mailOptions, function (err, info) {
-      if(err) {
-     	  statusCode = 400;
-        response = {
-    	  	error: err.message,
-    	  	message: 'Sorry, something went wrong! Please try again.',
-    	  };
-      } else {
-        statusCode = 200;
-        response = {
-  	  	  message: 'Successfully sent the message!',
-  	    };
-      }
-    });
+    const mailInfo = await transporter.sendMail(mailOptions);
+    console.log(mailInfo);
+
+    // If mail was successfully selt
+    if(mailInfo?.response.includes('OK')) {
+   	  statusCode = 400;
+      response = {
+  	  	error: err.message,
+  	  	message: 'Sorry, something went wrong! Please try again.',
+  	  };
+    } else {
+      statusCode = 200;
+      response = {
+	  	  message: 'Successfully sent the message!',
+	    };
+    }
 
     return {
       statusCode,
