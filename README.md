@@ -1,16 +1,14 @@
 # 🤖 Arun Bohra Portfolio
 
-Website showcasing my skills
-
 ## 🧑🏼‍💻 Tech Stack
 
 - HTML
 - CSS
-- JavaScript
+- JavaScript (bit of nodejs)
 
 ## ⚙️ Installation
 
-To run Robofriends on your local machine run the following commands
+To run project on your local machine run the following commands
 
 - Clone the project
 
@@ -35,6 +33,14 @@ To run Robofriends on your local machine run the following commands
 ```bash
   npm run dev
 ```
+
+To run application using netlify server (this is when you want to run netlify functions on dev) run the following
+
+```bash
+ntl dev
+```
+
+You'll need to install netlify CLI for running the above command, you can follow [this](https://docs.netlify.com/cli/get-started/) page to install netlify CLI.
 
 ## 🛂 Contributing
 
