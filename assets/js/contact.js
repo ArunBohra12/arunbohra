@@ -69,7 +69,7 @@ const sendMessage = async function (e) {
     },
     error() {
       showAlert('danger', 'Sorry, something went wrong. Please try again!');
-    }
+    },
   });
 };
 

@@ -1,17 +1,10 @@
-// Will create a function that sends me a mail
-// Nodemailer is used to send the mail
+// Using Twilio SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
 
-import * as nodemailer from 'nodemailer';
+import * as sgMail from '@sendgrid/mail';
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.MAIL_ADDRESS,
-    pass: process.env.MAIL_PASSWORD,
-  }
-});
-
-export const handler = async function(event, context) {
+export const handler = async function (event, context) {
   try {
     const { name, email, message } = JSON.parse(event.body);
 
@@ -19,12 +12,12 @@ export const handler = async function(event, context) {
       return {
         statusCode: 400,
         body: JSON.stringify({
-          message: 'Please provide all the details'
+          message: 'Please provide all the details',
         }),
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      };
     }
 
     if (event.httpMethod !== 'POST') {
@@ -35,60 +28,45 @@ export const handler = async function(event, context) {
         }),
         headers: {
           'Content-Type': 'application/json',
-          'Allow': 'POST'
+          Allow: 'POST',
         },
-      }
+      };
     }
 
-    const mailOptions = {
-      from: 'arunbohra12@gmail.com',
-      to: 'arunbohra12@gmail.com',
-      subject: 'Message from portfolio site',
+    const msg = {
+      to: process.env.EMAIL_TO,
+      from: process.env.EMAIL_FROM,
+      subject: `Message from ${name}`,
+      text: message,
       html: `
-        <p>Someone sent you a message</p>
-        <p><b>Name:</b>${name}</p>
+        <p>${name} sent you a message</p>
         <p><b>Email:</b>${email}</p>
+        <br />
         <div>
-        	<b>Message:</b>
-        	<p>${message}</p>
+          <b>Message:</b>
+          <p>${message}</p>
         </div>
       `,
     };
 
-    let response = { message: 'success', };
-    let statusCode = 200;
+    await sgMail.send(msg);
 
-    // The following transporter sends the mail
-    const mailInfo = await transporter.sendMail(mailOptions);
-    console.log(mailInfo);
-
-    // If mail was successfully selt
-    if(!mailInfo?.response.includes('OK')) {
-   	  statusCode = 400;
-      response = {
-  	  	message: 'Sorry, something went wrong! Please try again.',
-  	  };
-    } else {
-      statusCode = 200;
-      response = {
-	  	  message: 'Successfully sent the message!',
-	    };
-    }
+    const response = { message: 'Email sent successfully!' };
 
     return {
-      statusCode,
+      statusCode: 200,
       body: JSON.stringify(response),
       headers: {
         'Content-Type': 'application/json',
       },
-    }
-  } catch(err) {
+    };
+  } catch (err) {
     return {
       statusCode: 400,
       body: JSON.stringify({ message: err.message }),
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    };
   }
-}
+};
