@@ -312,6 +312,10 @@
   margin: 4.4rem auto 0;
 }
 
+.project-summary:has(> a:focus-visible) {
+  opacity: 1;
+}
+
 /* ------------------------------- */
 /* Footer */
 
@@ -569,4 +573,9 @@ h2.socials-heading {
   .technology {
     border: none;
   }
+}
+
+.back-to-top,
+.slick-arrow {
+  border: 0;
 }

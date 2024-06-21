@@ -1,21 +1,5 @@
 @import './animation.css';
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  font-family: inherit;
-}
-
-html {
-  /* Makes 1rem = 10px -> Easier to calculate in rem */
-  font-size: 62.5%;
-  scrollbar-color: #0064a7 #8ea5b5;
-  scroll-behavior: smooth;
-}
-
 :root {
   --color-blue-dark: #141c3a;
   --color-blue-light: #0066cd;
@@ -32,6 +16,23 @@ html {
   --border-radius-medium: 12px;
 
   --gray-border: 1px solid #dbe4f1;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+  outline-color: var(--color-seagreen-light);
+}
+
+html {
+  /* Makes 1rem = 10px -> Easier to calculate in rem */
+  font-size: 62.5%;
+  scrollbar-color: #0064a7 #8ea5b5;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
